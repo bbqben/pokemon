@@ -1,4 +1,4 @@
-const MAXPOKEMON = 5;
+const MAXPOKEMON = 12;
 
 let pokeApp = {};
 
@@ -227,6 +227,7 @@ pokeApp.compareUserToPokemon = (subject, value) => {
 
 		let pokeEvenImg = "images/pokemon/" + pokeApp.pokemonInfoList[pokemonEven].id + ".png";
 		$(".results__even img").attr("src", pokeEvenImg);
+		$(".resultsEven__pokemonValue").text(pokeApp.pokemonInfoList[pokemonEven][pokeApp.userSubject] + unit);
 	} else if (value > pokeApp.pokemonInfoList[lastPokemon][subject]) { // Checks if you are taller/heavier than all the pokemon
 		$(".modal__results").fadeIn(400,function() {
 			$("#resultsOver").fadeIn(200);
@@ -270,7 +271,7 @@ pokeApp.compareUserToPokemon = (subject, value) => {
 			word = "shortest";
 		};
 
-		$(".over span").text(word);
+		$(".under span").text(word);
 
 		$("#resultsUnder__pokemonName").text(pokeApp.capitalizeName(pokeApp.pokemonInfoList[pokemonUnder].name));
 		
@@ -288,20 +289,18 @@ pokeApp.compareUserToPokemon = (subject, value) => {
 		});
 
 
-//NEW SHIT GOES HERE
 		$(".between").removeClass('hidden');
 
 
 
-		convertedUnder = pokeApp.convertValue(pokeApp.pokemonInfoList[pokemonUnder][pokeApp.userSubject], pokeApp.userSystem).toFixed(2);
-		convertedOver = pokeApp.convertValue(pokeApp.pokemonInfoList[pokemonOver][pokeApp.userSubject], pokeApp.userSystem).toFixed(2);
+		convertedUnder = pokeApp.convertValue(pokeApp.pokemonInfoList[pokemonUnder][pokeApp.userSubject], pokeApp.userSubject, pokeApp.userSystem).toFixed(2);
+		convertedOver = pokeApp.convertValue(pokeApp.pokemonInfoList[pokemonOver][pokeApp.userSubject], pokeApp.userSubject, pokeApp.userSystem).toFixed(2);
 
 
 
 		$(".resultsUnder__pokemonValue").text(convertedUnder + unit);
 		$(".resultsOver__pokemonValue").text(convertedOver + unit);
 
-//NEW SHIT GOES HERE
 
 
 		// Displays the pokemon who is taller/heavier than the user
@@ -322,13 +321,15 @@ pokeApp.capitalizeName = (string) => {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-pokeApp.convertValue = (value, subject) => {
-	if (subject === "height") {
-		return value = value * 0.393701; // converted cm to inches
-	} else if (subject === "weight") {
-		return value = value * 2.20462; // converted kg to lbs
+pokeApp.convertValue = (value, subject, system) => {
+	if (system === "imperial") {
+		if (subject === "height") {
+			return value = value * 0.393701; // converted cm to inches
+		} else if (subject === "weight") {
+			return value = value * 2.20462; // converted kg to lbs
+		}
 	} else {
-		return value;
+			return value;
 	};
 }
 
@@ -350,10 +351,10 @@ pokeApp.resetModal = () => { // Clears the form, fades the results modal out, an
 	$(".results__over img").attr("src", "");
 	$(".results__even img").attr("src", "");
 
-	$( "#imperial" ).prop( "checked", false );
+	$( "#imperial" ).prop( "checked", true );
 	$( "#metric" ).prop( "checked", false );
 	$( "#height" ).prop( "checked", false );
-	$( "#weight" ).prop( "checked", false );
+	$( "#weight" ).prop( "checked", true );
 	$( "#userValue").val("");
 
 	$(".retry").fadeOut(100,function() {
@@ -380,10 +381,6 @@ pokeApp.setBackground = () => { // Used to randomly generate pokemon in the back
 	} // End of for loop
 };
 
-
-pokeApp.displayTip = () => {
-
-}
 
 
 $(() =>{
