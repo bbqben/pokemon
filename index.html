@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Poke-Human Compare</title>
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Raleway:300,400|VT323" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<header>
+			<h1>Pokemon-Human Comparison App </h1>
+			<span>Alpha 1.0</span>
+		</header>
+		<main>
+			<div class="wrapper">
+				<section class="userForm">
+					<form action="">
+
+						<div class="questionSet">
+							<p>Which system of measuremeant do you use?</p>
+							<div class="userForm__question userForm__question1">
+
+									<label for="imperial">
+										Imperial <input type="radio" name="system" id="imperial" value="imperial" required>
+									</label>
+
+									<label for="metric">
+										Metric <input type="radio" name="system" id="metric" value="metric" required>
+									</label>
+
+							</div>
+						</div> <!-- End of questionSet -->
+
+						<div class="questionSet">
+							<p>What are you interested in comparing?</p>
+							<div class="userForm__question userForm__question2">
+
+								<label for="weight">
+									Weight <input type="radio" name="subject" id="weight" value="weight" required>
+								</label>
+
+								<label for="height">
+									Height <input type="radio" name="subject" id="height" value="height" required>
+								</label>
+
+							</div> <!-- End of userForm__question2 -->
+						</div> <!-- End of questionSet -->
+						
+						<div class="questionSet">
+									<p>Please enter your weight/height</p>
+							<div class="userForm__question userForm__question3">
+								<label for="userValue">
+									 <input type="number" name="userValue" step="any" id="userValue" required>
+								</label>
+								<p id="tipHeight" class="hidden">If height please enter in inches (imperial) or centimeters (metric).</p>
+								<p id="tipWeight" class="hidden">If weight please enter in pounds (imperial) or kilograms (metric).</p>
+							</div>
+						</div> <!-- End of questionSet -->
+
+						<input type="submit" value="Submit">
+
+					</form>
+				</section>
+
+				<section class="modal hidden">
+					<div class="modal__loading hidden">
+
+						<div id="modal__loading__myProgress">
+							<div id="modal__loading__myProgress__myBar"></div>
+						</div> <!-- End of #modal__loading__myProgress -->
+
+						<div id="currentProgress">0%</div>
+
+					</div> <!-- End of .modal__loading -->
+					<div class="modal__results hidden">
+
+
+						<p class="between hidden">You are between these two pokemon:</p>
+						<p class="over hidden">You are the <span>*HEAVIEST/TALLEST*<span>. The <span>*HEAVIEST/TALLEST*<span> is:</p>
+						<p class="under hidden">You are the <span>*LIGHTER/SHORTEST*<span>. The <span>*LIGHTER/SHORTEST*<span> is:</p>
+						<div class="modal__results__container">
+							<!-- This is for the one under -->
+							<div class="results__under results hidden" id="resultsUnder">
+								<img src="" alt="A picture of a pokemon which is lighter/smaller than the user." class="animated pulse infinite">
+								<p><span id="resultsUnder__pokemonName">POKEMON/ALL THE POKEMON</span> is <span class="resultsUnder__pokemonValue">value</span></p>
+							</div>
+
+							<!-- This is for the one over -->
+							<div class="results__over results hidden" id="resultsOver">
+								<img src="" alt="A picture of a pokemon which is heavier/taller than the user." class="animated pulse infinite">
+								<p><span id="resultsOver__pokemonName">POKEMON/ALL THE POKEMON</span> is <span class="resultsOver__pokemonValue">value</span></p>
+							</div>
+
+							<!-- This is for even -->
+							<div class="results__even results hidden" id="resultsEven">
+								<img src="" alt="A picture of a pokemon which is the same height/weight as the user." class="animated pulse infinite">
+								<p><span id="resultsEven__pokemonName">POKEMON/ALL THE POKEMON</span> is <span class="resultsEven__pokemonValue">value</span></p>
+							</div>
+						</div>
+
+
+					</div> <!-- End of .modal__results -->
+
+				<div class="retry hidden">
+					<input type="button" value="Let's Compare Again">
+				</section>
+				</div>
+
+			</div> <!-- END OF WRAPPER -->
+			<div class="backgroundPokemon">
+				<!-- All the pokemon go in here! -->
+			</div>
+
+		</main>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+	<script src="script.js"></script>
+	</body>
+</html>

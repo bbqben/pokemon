@@ -1,0 +1,49 @@
+@import "partials/setup.scss";
+@import "partials/header.scss";
+@import "partials/form.scss";
+@import "partials/modal.scss";
+
+body {
+	background-color: #DC5152;
+	font-family: "Raleway";
+	padding-bottom: 50px;
+	main .backgroundPokemon {
+		overflow: hidden;
+	}
+}
+.wrapper {
+	max-width: 85%;
+	width: 900px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+@media (max-width: 820px) {
+	.wrapper {
+		max-width: 65%;
+	}
+}
+
+@media (max-width: 580px) {
+	.wrapper {
+		max-width: 75%
+	}
+}
+
+@media (max-width: 520px) {
+	body {
+		padding-bottom: 20px;
+	}
+	.wrapper {
+		max-width: 85%;
+	}
+}
+
+@media (max-width: 460px) {
+	.wrapper {
+		max-width: 95%;
+	}
+}

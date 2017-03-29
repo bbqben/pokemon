@@ -1,0 +1,38 @@
+header {
+	text-align: center;
+	margin-bottom: 50px;
+	color: #FFF;
+	font-family: "VT323";
+	text-shadow: 2px 2px 8px black;
+	h1 {
+		margin-bottom: 0;
+		font-size: 6.5rem;
+	}
+	span {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 820px) {
+	header h1 {
+			font-size: 5rem;
+	}
+}
+
+@media (max-width: 580px) {
+	header h1 {
+			font-size: 4.5rem;
+	}
+}
+
+@media (max-width: 520px) {
+	header h1 {
+			font-size: 3.5rem;
+	}
+}
+
+@media (max-width: 460px) {
+	header h1 {
+			font-size: 3rem;
+	}
+}

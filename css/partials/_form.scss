@@ -1,0 +1,165 @@
+.userForm form {
+	color: white;
+	font-size: 2rem;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #595959;
+	border: 5px solid black;
+
+	.questionSet {
+		margin-bottom: 20px;
+		padding: 60px 0;
+		background-color: #303130;
+		p {
+			text-align: center;
+			margin-bottom: 10px;
+			font-size: 2.6rem;
+			font-weight: 900;
+		} // end of p
+		.userForm__question {
+			margin: auto;
+			display:flex;
+			justify-content: center;
+			label {
+				margin: 20px 10px 0px 10px;
+				padding: 0 20px;
+			} // end of label
+		} // end of .userForm__question
+		.userForm__question3 {
+			display: flex;
+			flex-direction: column;
+			label, p {
+				margin: auto;
+			} // end of p and label of .userForm__question3
+			label {
+				margin-bottom: 10px;
+				text-align: center;
+				input {
+					text-align: center;
+				} // end of input
+			} // end of label
+			p {
+				font-size: 1.4rem;
+			}
+		} // end of .userform__question3
+	} // end of .questionSet
+	.questionSet:nth-of-type(3){
+		// Sets the last question to have no space beneath it
+		margin-bottom: 0px;
+	} // end of questionSet:nth-of-type(3)
+
+
+} // end of .userForm form
+
+
+input[type=submit], input[type=button] {
+	background-color: #2094D1;
+	margin: 30px auto;
+	padding: 25px 0;
+	width: 100%;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	box-shadow: 0 9px #333;
+	font-size: 2.1rem;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+input[type=submit]:hover, input[type=button]:hover {
+  background-color: #1C82B7;
+}
+input[type=submit]:active,  input[type=button]:active {
+  background-color: #1C82B7;
+  box-shadow: 0 4px #333;
+  transform: translateY(4px);
+}
+
+
+
+// START OF MEDIA QUERY FOR 1050PX WIDTH
+@media (max-width: 1050px) {
+	.userForm{
+		form {
+			.questionSet {
+				p {
+					font-size: 2rem;
+				}
+				.userForm__question {
+					label {
+						font-size: 1.6rem;
+					}
+				} // end of .userForm__question
+				.userForm__question3 {
+					p {
+						font-size: 1.2rem;
+					}
+				} // end of .userForm__question3
+			} // end of .questionSet
+		} // end of form
+	} // end of .userForm
+	input[type=submit], input[type=button] {
+		padding: 20px 0;
+		font-size: 2rem;
+	}
+}
+// END OF MEDIA QUERY FOR 1050PX WIDTH
+
+
+// START OF MEDIA QUERY FOR 820 WIDTH
+@media (max-width: 820px) {
+
+	.userForm{
+		form {
+			.questionSet {
+				padding: 50px 0;
+				p {
+					font-size: 1.6rem;
+				}
+				.userForm__question {
+					label {
+						font-size: 1.2rem;
+					}
+				}
+				.userForm__question3 {
+					p {
+						font-size: 1rem;
+					}
+				} // end of .userForm__question3
+			} // end of .questionSet
+		} // end of form
+	} // end of .userForm
+
+	input[type=submit], input[type=button] {
+		padding: 15px 0;
+		font-size: 1.6rem;
+	}
+}
+// END OF MEDIA QUERY FOR 820 WIDTH
+
+
+// START OF MEDIA QUERY FOR 640 WIDTH
+@media (max-width: 640px) {
+	.userForm{
+		form {
+			.questionSet {
+				padding: 40px 0;
+				p {
+					font-size: 1.2rem;
+				}
+				.userForm__question {
+					label {
+						font-size: 1rem;
+					}
+				}
+				.userForm__question3 {
+					p {
+						font-size: 0.8rem;
+					}
+				} // end of .userForm__question3
+			} // end of .questionSet
+		} // end of form
+	} // end of .userForm
+}
+// END OF MEDIA QUERY FOR 640 WIDTH
