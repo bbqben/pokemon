@@ -35,17 +35,33 @@ pokeApp.event = () => {
 	});
 
 	$("input[type=radio][name=subject]").on("change", (e) => {
-		console.log(e.target.value);
+
 		if (e.target.value === "weight") {
 			//remove class hidden from weight add class hidden to height
 			$("#tipHeight").addClass('hidden');
 			$("#tipWeight").removeClass('hidden');
+			$(".questionSetSubject").text("weight");
 		} else if (e.target.value === "height") {
 			//remove class hidden from height add class hidden to weight
 			$("#tipWeight").addClass('hidden');
 			$("#tipHeight").removeClass('hidden');
+			$(".questionSetSubject").text("height");
 		}
 	});
+
+	$("input[type=radio][name=system]").on("change", (e) => {
+		if (e.target.value === "metric") {
+			$(".questionSetImperial").addClass("hidden");
+			$(".questionSetMetric").removeClass("hidden");
+		} else if (e.target.value === "imperial") {
+			$(".questionSetImperial").removeClass("hidden");
+			$(".questionSetMetric").addClass("hidden");
+		}
+	});
+
+
+
+
 };
 
 

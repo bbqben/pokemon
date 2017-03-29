@@ -25,7 +25,7 @@
 							<div class="userForm__question userForm__question1">
 
 									<label for="imperial">
-										Imperial <input type="radio" name="system" id="imperial" value="imperial" required>
+										Imperial <input type="radio" name="system" id="imperial" value="imperial" required checked>
 									</label>
 
 									<label for="metric">
@@ -40,7 +40,7 @@
 							<div class="userForm__question userForm__question2">
 
 								<label for="weight">
-									Weight <input type="radio" name="subject" id="weight" value="weight" required>
+									Weight <input type="radio" name="subject" id="weight" value="weight" required checked>
 								</label>
 
 								<label for="height">
@@ -51,13 +51,13 @@
 						</div> <!-- End of questionSet -->
 						
 						<div class="questionSet">
-									<p>Please enter your weight/height</p>
+									<p>Please enter your <span class="questionSetSubject">weight</span></p>
 							<div class="userForm__question userForm__question3">
 								<label for="userValue">
 									 <input type="number" name="userValue" step="any" id="userValue" required>
 								</label>
-								<p id="tipHeight" class="hidden">If height please enter in inches (imperial) or centimeters (metric).</p>
-								<p id="tipWeight" class="hidden">If weight please enter in pounds (imperial) or kilograms (metric).</p>
+								<p id="tipWeight" class="">If weight please enter in <span class="questionSetImperial">pounds</span> <span class="questionSetMetric">kilograms</span>.</p>
+								<p id="tipHeight" class="hidden">If height please enter in <span class="questionSetImperial">inches</span> <span class="questionSetMetric">centimetres</span>.</p>
 							</div>
 						</div> <!-- End of questionSet -->
 
