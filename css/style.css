@@ -230,7 +230,7 @@ header {
 input[type=submit], input[type=button] {
   background-color: #2094D1;
   margin: 30px auto;
-  padding: 15px 55px;
+  padding: 15px 25px;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -305,6 +305,14 @@ input[type=submit]:active, input[type=button]:active {
     .userForm form .questionSet .userForm__question3 p {
       font-size: 1.8rem; } }
 
+@media (max-width: 380px) {
+  .modal input[type=button] {
+    font-size: 1.8rem; } }
+
+@media (max-width: 350px) {
+  .modal input[type=button] {
+    font-size: 1.6rem; } }
+
 .hidden {
   display: none; }
 
@@ -352,9 +360,16 @@ input[type=submit]:active, input[type=button]:active {
   .modal input[type=button] {
     position: relative;
     display: block;
-    width: 50%;
     margin-top: 50px;
     text-align: center; }
+
+@media (max-width: 650px) {
+  .modal .modal__results .modal__results__container .results img {
+    width: 150px; } }
+
+@media (max-width: 440px) {
+  .modal .modal__results > p {
+    font-size: 2.4rem; } }
 
 body {
   background-color: #DC5152;

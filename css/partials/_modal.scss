@@ -64,8 +64,26 @@
 	input[type=button] {
 		position: relative;
 		display: block;
-		width: 50%;
+		// width: 50%;
 		margin-top: 50px;
 		text-align: center;
 	}
 } // End of .modal
+
+
+@media (max-width: 650px) {
+
+	.modal .modal__results .modal__results__container .results img {
+		width: 150px;
+	}
+
+}
+
+
+@media (max-width: 440px) {
+
+	.modal .modal__results > p {
+		font-size: 2.4rem;
+	}
+
+}

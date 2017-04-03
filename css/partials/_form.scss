@@ -65,7 +65,7 @@
 input[type=submit], input[type=button] {
 	background-color: #2094D1;
 	margin: 30px auto;
-	padding: 15px 55px;
+	padding: 15px 25px;
 	border: none;
 	border-radius: 5px;
 	outline: none;
@@ -185,3 +185,15 @@ input[type=submit]:active,  input[type=button]:active {
 	} // end of .userForm
 }
 // END OF MEDIA QUERY FOR 640 WIDTH
+
+@media (max-width: 380px) {
+	.modal input[type=button] {
+		font-size: 1.8rem;
+	}
+}
+
+@media (max-width: 350px) {
+	.modal input[type=button] {
+		font-size: 1.6rem;
+	}
+}
